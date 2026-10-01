@@ -1,0 +1,1083 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pump It Up Photo Booth | Arena B</title>
+
+<meta name="description" content="Enjoy the Pump It Up Photo Booth in Arena B. One $55 package includes unlimited digital pictures and unlimited physical prints for 25 minutes.">
+
+<style>
+:root {
+    --navy: #101a3a;
+    --blue: #2457d6;
+    --cyan: #56d9ed;
+    --pink: #ff4f9a;
+    --yellow: #ffd45c;
+    --ink: #17213b;
+    --muted: #66708a;
+    --cream: #fffaf2;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.wrap {
+    width: min(1120px, calc(100% - 40px));
+    margin: auto;
+}
+
+/* TOP BAR */
+
+.topbar {
+    background: var(--navy);
+    color: white;
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-align: center;
+    padding: 11px 16px;
+}
+
+/* NAVIGATION */
+
+header {
+    position: absolute;
+    z-index: 2;
+    top: 42px;
+    left: 0;
+    width: 100%;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 900;
+    letter-spacing: .04em;
+}
+
+.brandmark {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, var(--pink), var(--yellow));
+    display: grid;
+    place-items: center;
+    color: var(--navy);
+    font-weight: 1000;
+    font-size: 20px;
+}
+
+.brand small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: .2em;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.navlinks {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.navlinks a:hover {
+    color: var(--yellow);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 690px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    background:
+        radial-gradient(ellipse at 75% 40%, #356de6 0, transparent 35%),
+        radial-gradient(ellipse at 10% 90%, #ed438c 0, transparent 35%),
+        linear-gradient(125deg, #101a3a 0%, #192b62 55%, #12204a 100%);
+    display: flex;
+    align-items: center;
+    padding: 150px 0 85px;
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .17;
+    background-image: radial-gradient(#fff 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+.hero:after {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border: 1px solid #ffffff24;
+    border-radius: 50%;
+    right: -110px;
+    top: 100px;
+    box-shadow:
+        0 0 0 35px #ffffff08,
+        0 0 0 75px #ffffff06;
+}
+
+.hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid #ffffff55;
+    background: #ffffff12;
+    border-radius: 99px;
+    padding: 9px 14px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    background: var(--yellow);
+    border-radius: 50%;
+}
+
+h1 {
+    font-size: clamp(46px, 6vw, 76px);
+    line-height: .98;
+    letter-spacing: -.055em;
+    margin: 24px 0 20px;
+    font-weight: 950;
+}
+
+h1 span {
+    color: var(--yellow);
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.65;
+    color: #e2e8ff;
+    max-width: 520px;
+    margin: 0 0 28px;
+}
+
+.actions {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 22px;
+    border-radius: 12px;
+    font-weight: 850;
+    font-size: 14px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--yellow);
+    color: var(--navy);
+    box-shadow: 0 10px 28px #0003;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    border: 1px solid #ffffff70;
+    color: white;
+    background: #ffffff0c;
+}
+
+/* PHOTO BOOTH IMAGE */
+
+.visual {
+    position: relative;
+    min-height: 430px;
+    display: grid;
+    place-items: center;
+}
+
+.booth-card {
+    position: relative;
+    width: min(100%, 390px);
+    padding: 12px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 30px 80px #0007;
+    transform: rotate(2deg);
+    color: var(--navy);
+}
+
+.booth-image {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 13px;
+}
+
+.print-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 15px 7px 4px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .08em;
+}
+
+.print-label span:last-child {
+    color: var(--blue);
+}
+
+.price-burst {
+    position: absolute;
+    right: -7px;
+    top: 14px;
+    background: var(--pink);
+    color: white;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    transform: rotate(10deg);
+    box-shadow: 0 12px 25px #0004;
+    border: 5px solid white;
+}
+
+.price-burst b {
+    font-size: 25px;
+    line-height: 1;
+}
+
+.price-burst small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: .1em;
+    font-weight: 900;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 92px 0;
+}
+
+.section-head {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 42px;
+}
+
+.kicker {
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--blue);
+}
+
+h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    letter-spacing: -.045em;
+    line-height: 1.08;
+    margin: 12px 0;
+    color: var(--navy);
+}
+
+.section-head p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* FEATURES */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.feature {
+    background: white;
+    border: 1px solid #e9e8e5;
+    border-radius: 18px;
+    padding: 27px;
+    box-shadow: 0 10px 30px #18244a08;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+    background: #edf2ff;
+    margin-bottom: 19px;
+}
+
+.feature:nth-child(2) .icon {
+    background: #fff0f6;
+}
+
+.feature:nth-child(3) .icon {
+    background: #fff6d9;
+}
+
+.feature h3 {
+    margin: 0 0 9px;
+    color: var(--navy);
+    font-size: 18px;
+}
+
+.feature p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+/* PACKAGE */
+
+.package {
+    background: var(--navy);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.package h2 {
+    color: white;
+}
+
+.package p {
+    color: #d5ddf7;
+    line-height: 1.7;
+}
+
+.package-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.checklist {
+    display: grid;
+    gap: 15px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.checklist li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: #f3f5ff;
+}
+
+.check {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff18;
+    color: var(--cyan);
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+}
+
+.price-card {
+    background: white;
+    color: var(--navy);
+    border-radius: 23px;
+    padding: 32px;
+    box-shadow: 0 25px 70px #0004;
+    transform: rotate(1deg);
+}
+
+.price-card .label {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .18em;
+    color: var(--blue);
+}
+
+.amount {
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 950;
+    letter-spacing: -.07em;
+    margin: 14px 0 4px;
+}
+
+.amount sup {
+    font-size: 26px;
+    vertical-align: top;
+    letter-spacing: 0;
+}
+
+.duration {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.price-card hr {
+    border: 0;
+    border-top: 1px solid #e9ebf1;
+    margin: 24px 0;
+}
+
+.price-card .btn {
+    width: 100%;
+    background: var(--pink);
+    color: white;
+    margin-top: 12px;
+}
+
+.price-card .btn:hover {
+    background: #e83c85;
+    transform: translateY(-2px);
+}
+
+.fine {
+    font-size: 11px;
+    color: #7a8298;
+    text-align: center;
+    margin: 12px 0 0;
+    line-height: 1.5;
+}
+
+/* HOW IT WORKS */
+
+.how {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.step {
+    padding: 24px 10px;
+    text-align: center;
+}
+
+.num {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: var(--blue);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-weight: 950;
+    margin: 0 auto 17px;
+}
+
+.step h3 {
+    margin: 0 0 8px;
+    color: var(--navy);
+}
+
+.step p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* FINAL CALL TO ACTION */
+
+.cta {
+    padding: 72px 0;
+    background: linear-gradient(
+        110deg,
+        #ff4f9a,
+        #ff9a73 55%,
+        #ffd45c
+    );
+    text-align: center;
+    color: var(--navy);
+}
+
+.cta h2 {
+    color: var(--navy);
+    margin-top: 0;
+}
+
+.cta p {
+    margin: 0 auto 24px;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.cta .btn {
+    background: var(--navy);
+    color: white;
+}
+
+.cta .btn:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+
+footer {
+    background: #0b122b;
+    color: #aeb8d8;
+    padding: 27px 0;
+    font-size: 12px;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.foot strong {
+    color: white;
+    letter-spacing: .08em;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 760px) {
+
+    .navlinks {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 130px;
+        min-height: auto;
+    }
+
+    .hero-grid,
+    .package-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .visual {
+        min-height: 390px;
+        margin-top: 10px;
+    }
+
+    .booth-card {
+        max-width: 340px;
+    }
+
+    .booth-image {
+        height: 320px;
+    }
+
+    .price-burst {
+        right: 0;
+    }
+
+    .features,
+    .how {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 68px 0;
+    }
+
+    .price-card {
+        max-width: 420px;
+        margin: auto;
+    }
+
+    .foot {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .print-label {
+        font-size: 9px;
+    }
+
+    .price-burst {
+        width: 88px;
+        height: 88px;
+    }
+
+    .price-burst b {
+        font-size: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    PUMP IT UP • ARENA B PHOTO BOOTH EXPERIENCE
+</div>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="wrap nav">
+
+        <a class="brand" href="#top">
+            <span class="brandmark">PIU</span>
+
+            <span>
+                PUMP IT UP
+                <small>PHOTO BOOTH • ARENA B</small>
+            </span>
+        </a>
+
+        <nav class="navlinks">
+            <a href="#experience">The Experience</a>
+            <a href="#package">Package</a>
+            <a href="#how">How It Works</a>
+        </nav>
+
+    </div>
+</header>
+
+<main id="top">
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="wrap hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+                <span class="dot"></span>
+                Big smiles. Instant keepsakes.
+            </div>
+
+            <h1>
+                Make the fun<br>
+                <span>picture-perfect.</span>
+            </h1>
+
+            <p>
+                Bring the party energy to your celebration with
+                the Pump It Up Photo Booth in Arena B. Capture
+                the silly poses, big laughs, and unforgettable
+                moments — then take the memories home.
+            </p>
+
+            <div class="actions">
+
+                <a class="btn btn-primary" href="#package">
+                    Explore the $55 package →
+                </a>
+
+                <a class="btn btn-ghost" href="#experience">
+                    See what's included
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ACTUAL PHOTO BOOTH IMAGE -->
+
+        <div class="visual">
+
+            <div class="booth-card">
+
+                <img
+                    src="photo.png"
+                    alt="Pump It Up Photo Booth party memories"
+                    class="booth-image"
+                >
+
+                <div class="print-label">
+                    <span>THE PARTY PHOTO BOOTH</span>
+                    <span>SMILE • SNAP • KEEP</span>
+                </div>
+
+            </div>
+
+            <div class="price-burst">
+                <div>
+                    <b>$55</b>
+                    <small>ONE PACKAGE</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE SECTION -->
+
+<section class="section" id="experience">
+
+    <div class="wrap">
+
+        <div class="section-head">
+
+            <div class="kicker">
+                A whole lot of memory-making
+            </div>
+
+            <h2>One booth. All the fun.</h2>
+
+            <p>
+                Make the most of your time in Arena B with a
+                photo booth experience designed for nonstop
+                party memories.
+            </p>
+
+        </div>
+
+        <div class="features">
+
+            <article class="feature">
+
+                <div class="icon">📸</div>
+
+                <h3>Unlimited digital pictures</h3>
+
+                <p>
+                    Take as many digital photos as you like
+                    during your photo booth time. Keep the
+                    moments and share the smiles.
+                </p>
+
+            </article>
+
+            <article class="feature">
+
+                <div class="icon">🖨️</div>
+
+                <h3>Unlimited physical prints</h3>
+
+                <p>
+                    Print as many photo keepsakes as you like
+                    throughout your included session.
+                </p>
+
+            </article>
+
+            <article class="feature">
+
+                <div class="icon">⏱️</div>
+
+                <h3>25 minutes in Arena B</h3>
+
+                <p>
+                    Your package includes the photo booth
+                    for the entire 25-minute Arena B session.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PACKAGE SECTION -->
+
+<section class="section package" id="package">
+
+    <div class="wrap package-grid">
+
+        <div>
+
+            <div class="kicker" style="color:var(--cyan)">
+                Simple. All-inclusive. Party-ready.
+            </div>
+
+            <h2>The Photo Booth Package</h2>
+
+            <p>
+                One easy package gives your group the freedom
+                to capture and print memories throughout your
+                Arena B time.
+            </p>
+
+            <ul class="checklist">
+
+                <li>
+                    <span class="check">✓</span>
+                    <span>
+                        <strong>One flat price:</strong>
+                        $55 per package
+                    </span>
+                </li>
+
+                <li>
+                    <span class="check">✓</span>
+                    <span>
+                        <strong>Unlimited digital pictures</strong>
+                        during the session
+                    </span>
+                </li>
+
+                <li>
+                    <span class="check">✓</span>
+                    <span>
+                        <strong>Unlimited physical prints</strong>
+                        during the session
+                    </span>
+                </li>
+
+                <li>
+                    <span class="check">✓</span>
+                    <span>
+                        <strong>25 minutes</strong>
+                        — your entire Arena B time
+                    </span>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- PRICE CARD -->
+
+        <div class="price-card">
+
+            <div class="label">
+                PUMP IT UP PHOTO BOOTH
+            </div>
+
+            <div class="amount">
+                <sup>$</sup>55
+            </div>
+
+            <div class="duration">
+                ONE PACKAGE • 25 MINUTES • ARENA B
+            </div>
+
+            <hr>
+
+            <p style="color:var(--muted);font-size:14px;margin:0">
+
+                Unlimited digital pictures and unlimited
+                physical prints are included for the
+                entire session.
+
+            </p>
+
+            <a class="btn" href="#book">
+                Add to Cart →
+            </a>
+
+            <div class="fine">
+                Ask your party attendant or the front desk
+                about photo booth availability and more details.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="section" id="how">
+
+    <div class="wrap">
+
+        <div class="section-head">
+
+            <div class="kicker">
+                Easy as 1, 2, 3
+            </div>
+
+            <h2>How the fun works</h2>
+
+            <p>
+                Spend your time celebrating — the photo booth
+                makes it easy to capture the moment.
+            </p>
+
+        </div>
+
+        <div class="how">
+
+            <div class="step">
+
+                <div class="num">01</div>
+
+                <h3>Ask about the package</h3>
+
+                <p>
+                    Ask your party attendant or the front
+                    desk about the $55 photo booth package,
+                    availability, and more details.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="num">02</div>
+
+                <h3>Strike a pose</h3>
+
+                <p>
+                    Enjoy unlimited digital photos and
+                    physical prints during your 25 minutes
+                    in Arena B.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="num">03</div>
+
+                <h3>Keep the memories</h3>
+
+                <p>
+                    Take home your printed keepsakes and
+                    enjoy your digital pictures.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FINAL CALL TO ACTION -->
+
+<section class="cta" id="book">
+
+    <div class="wrap">
+
+        <h2>
+            Ready to make it a photo-finish party?
+        </h2>
+
+        <p>
+            Add the Pump It Up Photo Booth to your Arena B
+            celebration for just $55.
+
+            <br><br>
+
+            <strong>
+                Ask your party attendant or the front desk
+                about photo booth availability and more details.
+            </strong>
+        </p>
+
+        <a class="btn" href="#package">
+            Explore the $55 Package →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="wrap foot">
+
+        <strong>
+            PUMP IT UP • PHOTO BOOTH
+        </strong>
+
+        <span>
+            Big smiles. Great memories. Arena B.
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
